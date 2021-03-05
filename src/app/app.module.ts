@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrentPricingComponent } from './current-pricing/current-pricing.component';
+import { PriceHistoryComponent } from './price-history/price-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionHistoryComponent,
-    CurrentPricingComponent
+    CurrentPricingComponent,
+    PriceHistoryComponent
   ],
   imports: [
     BrowserModule,
