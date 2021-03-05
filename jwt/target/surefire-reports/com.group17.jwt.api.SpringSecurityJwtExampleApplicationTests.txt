@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.group17.jwt.api.SpringSecurityJwtExampleApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.283 s - in com.group17.jwt.api.SpringSecurityJwtExampleApplicationTests
