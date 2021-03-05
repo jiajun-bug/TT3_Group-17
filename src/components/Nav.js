@@ -3,7 +3,9 @@ import {withRouter} from 'react-router-dom';
 
 class Nav extends React.Component {
     
-    state={ clickedon : false,road:'',acckey:''};
+    state={ clickedon : false,road:'',acckey:this.props.location.state.data};
+
+    
     clicked = () => {
         if(this.state.clickedon===false) {
             this.setState({clickedon:true});
@@ -22,6 +24,8 @@ class Nav extends React.Component {
         }
     }
     render() {
+
+        
         
         return (
         <div>

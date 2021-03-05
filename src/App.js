@@ -2,12 +2,35 @@ import React from 'react';
 import { Route, Switch, withRouter } from "react-router-dom";
 import Nav from './components/Nav';
 import View from './components/View';
+import Login from './components/Login';
+import LoginApi from './api/LoginAPI';
 
 class App extends React.Component {
+    state = {response: ""};
+    LoggingIn = async (user, pass) => {
+        const loggedin = await LoginApi.post("/login",{
+            username: user,
+            password: pass
+        });
+        this.setState({response: loggedin});
+        console.log(loggedin.data);
+        this.props.history.push({pathname:"/view",state:{data:loggedin.data}})
+    }
+    
+    
+    
+    
+    
     render() {
         return (
             <div>
+
+                
                 <Switch>
+
+                    <Route exact path="/">
+                        <Login onsubmit={this.LoggingIn}/>
+                    </Route>
                     <Route path="/view">
                         <Nav road="/view" />
                         <View />
