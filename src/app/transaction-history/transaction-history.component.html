@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr *ngIf="transactions.length > 0">
+                    <th style="text-align:center">Transaction ID</th>
+                    <th style="text-align:center">Account</th>
+                    <th style="text-align:center">Order Type</th>
+                    <th style="text-align:center">Asset Symbol</th>
+                    <th style="text-align:center">Asset Price</th>
+                    <th style="text-align:center">Cash Amount</th>
+                    <th style="text-align:center">Asset Amount</th>
+                    <th style="text-align:center">timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactions">
+                    <td style="text-align:center">{{transaction.transactionId}}</td>
+                    <td style="text-align:center">{{transaction.accountKey}}</td>
+                    <td style="text-align:center">{{transaction.orderType}}</td>
+                    <td style="text-align:center">{{transaction.assetSymbol}}</td>
+                    <td style="text-align:center">{{transaction.assetPrice}}</td>
+                    <td style="text-align:center">{{transaction.cashAmount}}</td>
+                    <td style="text-align:center">{{transaction.assetAmount}}</td>
+                    <td style="text-align:center">{{transaction.timestamp}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
