@@ -21,7 +21,8 @@ class App extends React.Component {
             assetAmount: amount
         });
         
-        this.setState({addresponse:transacted})
+        this.setState({addresponse:transacted});
+        console.log(transacted);
     }
 
     render() {
