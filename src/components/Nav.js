@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 class Nav extends React.Component {
     
-    state={ clickedon : false};
+    state={ clickedon : false,road:'',acckey:''};
     clicked = () => {
         if(this.state.clickedon===false) {
             this.setState({clickedon:true});
@@ -12,28 +12,38 @@ class Nav extends React.Component {
             this.setState({clickedon:false});
         }
     }
+    Update = (buttonvalue) =>{
+        const path=this.props.road
+        if(path===buttonvalue) {
+            window.location.reload(false);
+        }
+        else {
+            this.props.history.push({pathname:buttonvalue,state:{data:this.state.acckey}});
+        }
+    }
     render() {
+        
         return (
         <div>
-            <li>
-                User details
+            <button className="ui button" onClick={(e)=>this.Update("/view")}>
+                <label>User details</label>
                 
-            </li>
-            <li>
-                View wallet balance
-            </li>
-            <li>
-                Current pricing of assets
-            </li>
-            <li>
+            </button>
+            <button className="ui button" onClick={(e)=>this.Update("/balance")}>
+                <label>wallet balance</label>
+            </button>
+            <button className="ui button" onClick={(e)=>this.Update("/price")}>
+                <label>Current pricing of assets</label>
+            </button>
+            <button className="ui button" onClick={(e)=>this.Update("/historical")}>
                 Historical pricing of assets
-            </li>
-            <li>
+            </button>
+            <button className="ui button" onClick={(e)=>this.Update("/pasttransaction")}>
                 View past transactions
-            </li>
-            <li>
+            </button>
+            <button className="ui button" onClick={(e)=>this.Update("/buyandsell")}>
                Buy and sell assets
-            </li>
+            </button>
         </div>);
     }
 }

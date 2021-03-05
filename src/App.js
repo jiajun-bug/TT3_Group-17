@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, withRouter } from "react-router-dom";
 import Nav from './components/Nav';
+import View from './components/View';
 
 class App extends React.Component {
     render() {
@@ -8,23 +9,23 @@ class App extends React.Component {
             <div>
                 <Switch>
                     <Route path="/view">
-                        <Nav/>
+                        <Nav road="/view" />
                         <View />
                     </Route>
                     <Route path="/balance">
-                        <Nav/>
+                        <Nav road="/balance"/>
                     </Route>
                     <Route path="/price">
-                        <Nav/>
+                        <Nav road="/price"/>
                     </Route>
                     <Route path="/historical">
-                        <Nav/>
+                        <Nav road="/historical"/>
                     </Route>
                     <Route path="/pasttransaction">
-                        <Nav/>
+                        <Nav road="/pasttransaction"/>
                     </Route>
                     <Route path="/buyandsell">
-                        <Nav/>
+                        <Nav road="buyandsell"/>
                     </Route>
                 </Switch>
             </div>
@@ -33,4 +34,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default withRouter(App);

@@ -12,3 +12,4 @@ class View extends React.Component {
         );
     }
 }
+export default withRouter(View);
