@@ -11,16 +11,16 @@ class Login extends React.Component {
 
     render() {
         return (
-            <form className="ui form" onSubmit={this.onFormSubmit}>
+            <form className="form-control"onSubmit={this.onFormSubmit}>
                 <div className="field">
-                    <label>Username: </label>
+                    <label>Username </label>
                     <input type="text" placeholder="Username..." onChange={(e)=>this.setState({user:e.target.value})} />
                 </div>
-                <div className="field">
-                    <label>Password: </label>
+                <div className="form-control">
+                    <label>Password </label>
                     <input type="text" placeholder="Password" onChange={(e)=>this.setState({pass:e.target.value})} />
                 </div>
-                <button className="ui button" type="submit">Login</button>
+                <button className="btn btn-sm btn-outline-primary"  type="submit">Login</button>
 
             </form>
         );

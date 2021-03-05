@@ -29,24 +29,24 @@ class Nav extends React.Component {
         
         return (
         <div>
-            <button className="ui button" onClick={(e)=>this.Update("/view")}>
+            <button className="ui-button" onClick={(e)=>this.Update("/view")}>
                 <label>User details</label>
                 
             </button>
-            <button className="ui button" onClick={(e)=>this.Update("/balance")}>
+            <button className="ui-button" onClick={(e)=>this.Update("/balance")}>
                 <label>wallet balance</label>
             </button>
-            <button className="ui button" onClick={(e)=>this.Update("/price")}>
+            <button className="ui-button" onClick={(e)=>this.Update("/price")}>
                 <label>Current pricing of assets</label>
             </button>
-            <button className="ui button" onClick={(e)=>this.Update("/historical")}>
-                Historical pricing of assets
+            <button className="ui-button" onClick={(e)=>this.Update("/historical")}>
+                <label>Historical pricing of assets</label>
             </button>
-            <button className="ui button" onClick={(e)=>this.Update("/pasttransaction")}>
-                View past transactions
+            <button className="ui-button" onClick={(e)=>this.Update("/pasttransaction")}>
+                <label>View past transactions</label>
             </button>
-            <button className="ui button" onClick={(e)=>this.Update("/buyandsell")}>
-               Buy and sell assets
+            <button className="ui-button" onClick={(e)=>this.Update("/buyandsell")}>
+               <label>Buy and sell assets</label>
             </button>
         </div>);
     }
