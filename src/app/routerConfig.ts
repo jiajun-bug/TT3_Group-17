@@ -5,15 +5,15 @@ import { Routes } from '@angular/router';
 
 const appRoutes: Routes = [
     {
-        path: 'currentPrice',
+        path: 'price',
         component: CurrentPricingComponent
     },
     {
-        path: 'priceHistory',
+        path: 'historical',
         component: PriceHistoryComponent
     },
     {
-        path: 'transactionHistory',
+        path: 'pasttransactions',
         component: TransactionHistoryComponent
     }
 ];
