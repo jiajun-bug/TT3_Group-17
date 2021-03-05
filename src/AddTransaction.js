@@ -1,12 +1,16 @@
 import React from 'react';
 
 class AddTransaction extends React.Component {
-    state={accountKey:'',orderType:'',assetAmount:null};
+    state={accKey:'',order:'',amount:null};
 
     onAddTransact = (event) => {
         event.preventDefault();
-        this.props.ontransact(this.state.accountKey,this.state.orderType,this.state.assetAmount);
+        this.props.ontransact(this.state.accKey,this.state.order,this.state.amount);
+        console.log(this.state.accKey,this.state.order,this.state.amount);
     }
+    handleChange(event) {
+        this.setState({order: event.target.value});
+      }
 
 
     render() {
@@ -14,17 +18,17 @@ class AddTransaction extends React.Component {
             <form className="ui form" onSubmit={this.onAddTransact}>
                 <div className="field">
                     <label>Account Key: </label>
-                    <input type="text" placeholder="Acc Key" onChange={(e)=>this.setState({accountKey:e.target.value})} />
+                    <input type="text" placeholder="Acc Key" onChange={(e)=>this.setState({accKey:e.target.value})} />
                 </div>
                 <div className="field">
                     <label>Order Type BUY or SELL: </label>
-                    <input type="text" placeholder="BUY or SELL" onChange={(e)=>this.setState({orderType:e.target.value})} />
+                    <input type="text" placeholder="BUY or SELL" onChange={(e)=>this.setState({order:e.target.value})} />
                 </div>
                 <div className="field">
-                    <label>Asset Amount incl 2 decimal place: </label>
-                    <input type="number" step="0.01" placeholder="Asset Amount " onChange={(e)=>this.setState({assetAmount:e.target.value})} />
+                    <label>Asset Amount incl 2dp: </label>
+                    <input type="number" placeholder="Asset Amount " onChange={(e)=>this.setState({amount:e.target.value})} />
                 </div>
-                <button className="ui button" type="submit">AddTransaction</button>
+                <button className="ui button" type="submit">Add Transaction</button>
             </form>
         )
     }

@@ -13,13 +13,14 @@ class App extends React.Component {
         this.setState({response: loggedin});
         console.log(loggedin);
     }
-    // Belongs to Buy Sell Component
-    Transacting = async(accountKey, orderType, assetAmount) => {
+    // Belongs to AddTransaction Component
+    Transacting = async(accKey, order, amount) => {
         const transacted = await LoginApi.post("/transactions/add",{
-            accountKey: accountKey,
-            orderType: orderType,
-            assetAmount: assetAmount
+            accountKey: accKey,
+            orderType: order,
+            assetAmount: amount
         });
+        
         this.setState({addresponse:transacted})
     }
 
