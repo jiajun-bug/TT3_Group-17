@@ -4,6 +4,8 @@ import Nav from './components/Nav';
 import View from './components/View';
 import Login from './components/Login';
 import LoginApi from './api/LoginAPI';
+import Balance from './components/Balance';
+
 
 class App extends React.Component {
     state = {response: ""};
@@ -37,6 +39,7 @@ class App extends React.Component {
                     </Route>
                     <Route path="/balance">
                         <Nav road="/balance"/>
+                        <Balance/>
                     </Route>
                     <Route path="/price">
                         <Nav road="/price"/>

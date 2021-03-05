@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 class Nav extends React.Component {
     
-    state={ clickedon : false,road:'',acckey:this.props.location.state.data};
+    state={ clickedon : false,road:'',acckey:this.props.location.state.data.accountKey};
 
     
     clicked = () => {
@@ -20,13 +20,14 @@ class Nav extends React.Component {
             window.location.reload(false);
         }
         else {
+            console.log(this.state.acckey);
             this.props.history.push({pathname:buttonvalue,state:{data:this.state.acckey}});
         }
     }
     render() {
 
         
-        
+        console.log(this.state.acckey);
         return (
         <div>
             <button className="ui button" onClick={(e)=>this.Update("/view")}>
